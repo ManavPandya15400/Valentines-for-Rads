@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Valentine's Day for Rads ❤️</title>
+    <style>
+        body {
+            background-color: #ffe6e6;
+            font-family: 'Comic Sans MS', sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+        h1 {
+            color: #ff4d4d;
+            font-size: 3em;
+        }
+        .buttons {
+            margin-top: 50px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            margin: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        #yesBtn {
+            background-color: #ff4d4d;
+            color: white;
+        }
+        #noBtn {
+            background-color: #ff99cc;
+            color: white;
+            position: relative;
+        }
+        #gifContainer {
+            margin-top: 50px;
+        }
+        img {
+            width: 300px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rads, will you be my Valentine? ❤️</h1>
+    <div class="buttons">
+        <button id="yesBtn">Yes</button>
+        <button id="noBtn">No</button>
+    </div>
+    <div id="gifContainer"></div>
+
+    <script>
+        const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
+        const gifContainer = document.getElementById('gifContainer');
+
+        // Make the "No" button move when hovered
+        noBtn.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        });
+
+        // Show Bhagam Bhag gif when "Yes" is clicked
+        yesBtn.addEventListener('click', () => {
+            gifContainer.innerHTML = '<img src="https://media.giphy.com/media/26BRzozg4TCBXv6QU/giphy.gif" alt="Bhagam Bhag GIF">';
+        });
+    </script>
+</body>
+</html>
